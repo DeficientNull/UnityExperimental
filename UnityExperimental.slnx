@@ -1,6 +1,2 @@
 ﻿<Solution>
-  <Project Path="BakeryEditorAssembly.csproj" />
-  <Project Path="BakeryRuntimeAssembly.csproj" />
-  <Project Path="BakeryECS.csproj" />
-  <Project Path="BakeryAPV.csproj" />
 </Solution>
