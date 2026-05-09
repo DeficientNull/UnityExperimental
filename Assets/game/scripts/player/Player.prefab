@@ -123,7 +123,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911099081026720931}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -191,8 +191,8 @@ MonoBehaviour:
   player_rb: {fileID: 3568606551493638957}
   player_body_position: {fileID: 4942844040250928195}
   player_camera: {fileID: 5273344696315024532}
-  cam_sensitivity: 200
-  player_speed: 10
+  cam_sensitivity: 400
+  player_speed: 20
   player_health: 100
 --- !u!1 &7704392931864410826
 GameObject:

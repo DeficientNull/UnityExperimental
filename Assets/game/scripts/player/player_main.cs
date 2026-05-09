@@ -81,6 +81,10 @@ public class player_main : MonoBehaviour
         cam_rotation_y += mouse_x;
         cam_rotation_x -= mouse_y;
 
+        // clamp camera rotation
+        cam_rotation_x = Mathf.Clamp(cam_rotation_x, -90f, 90f);
+
+        // FIXME - weird issue where moving around the mouse feels very stuttery
         player_camera.transform.rotation = Quaternion.Euler(cam_rotation_x, cam_rotation_y, 0);
     }
 }
