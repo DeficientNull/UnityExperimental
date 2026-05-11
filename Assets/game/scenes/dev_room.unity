@@ -466,7 +466,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112717005}
-  m_Material: {fileID: 13400000, guid: 93098808d909c814f96808253faebd67, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -561,6 +561,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3568606551493638957, guid: eb41a3d22d44bdf4db9005c481f44f1e, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3803726398397121891, guid: eb41a3d22d44bdf4db9005c481f44f1e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.9754
@@ -603,7 +607,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5422065219360646610, guid: eb41a3d22d44bdf4db9005c481f44f1e, type: 3}
       propertyPath: player_speed
-      value: 30
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5422065219360646610, guid: eb41a3d22d44bdf4db9005c481f44f1e, type: 3}
+      propertyPath: player_jump_amt
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6629592050871058985, guid: eb41a3d22d44bdf4db9005c481f44f1e, type: 3}
       propertyPath: m_Name

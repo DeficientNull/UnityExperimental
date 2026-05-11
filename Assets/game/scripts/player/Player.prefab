@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911099081026720931}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -139,7 +139,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!1 &6629592050871058985
@@ -192,7 +192,7 @@ MonoBehaviour:
   player_body_position: {fileID: 4942844040250928195}
   player_camera: {fileID: 5273344696315024532}
   cam_sensitivity: 400
-  player_speed: 20
+  player_speed: 10
   player_health: 100
   player_jump_amt: 10
 --- !u!1 &7704392931864410826

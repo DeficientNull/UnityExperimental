@@ -15,9 +15,10 @@ public class player_main : MonoBehaviour
     public float cam_sensitivity = 200;
     private float cam_rotation_x;
     private float cam_rotation_y;
-    public float player_speed = 2.5f;
+    public float player_speed;
     public int player_health = 100;
     public float player_jump_amt;
+    public float player_drag_amt;
 
     // player hud setup
     //bool is_game_paused = false;
@@ -42,6 +43,9 @@ public class player_main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player_rb.linearDamping = player_drag_amt;
+
+        // Temp Pause Menu Crap
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
@@ -95,10 +99,10 @@ public class player_main : MonoBehaviour
         // FIXME - weird issue where moving around the mouse feels very stuttery
         player_camera.transform.rotation = Quaternion.Euler(cam_rotation_x, cam_rotation_y, 0);
     }
-    
+
     void PlayerJump()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space))
         {
             player_rb.AddForce(Vector3.up * player_jump_amt, ForceMode.Impulse); 
         }        
