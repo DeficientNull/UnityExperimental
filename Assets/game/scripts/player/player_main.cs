@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEditor.Callbacks;
 using UnityEngine;
 
@@ -54,6 +55,11 @@ public class player_main : MonoBehaviour
         // move the rigidbody based on camera orientation
         Vector3 cam_orientation = player_camera.transform.forward;
         Vector3 cam_side_orientation = player_camera.transform.right;
+
+        cam_orientation.y = 0;
+        cam_side_orientation.y = 0;
+        cam_orientation.Normalize();
+        cam_side_orientation.Normalize();
 
         if (Input.GetKey("w"))
         {
