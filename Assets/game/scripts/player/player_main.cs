@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEditor.Callbacks;
 using UnityEngine;
@@ -21,7 +22,7 @@ public class player_main : MonoBehaviour
     public float player_drag_amt;
 
     // player hud setup
-    //bool is_game_paused = false;
+    bool is_game_paused = false;
     
     void Start()
     {
@@ -43,16 +44,10 @@ public class player_main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //do air drag
         player_rb.linearDamping = player_drag_amt;
 
-        // Temp Pause Menu Crap
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Debug.Log("game paused"); // all i need for now
-        }
-        //DrawPauseMenu();
+        PauseGame();
         MouseLook();
     }
 
@@ -102,9 +97,23 @@ public class player_main : MonoBehaviour
 
     void PlayerJump()
     {
+        player_jump_amt = Mathf.Clamp(player_jump_amt, 1, 2);
         if(Input.GetKey(KeyCode.Space))
         {
             player_rb.AddForce(Vector3.up * player_jump_amt, ForceMode.Impulse); 
+            Debug.Log("Jumping");
         }        
+    }
+
+    void PauseGame()
+    {
+         // Temp Pause Menu Crap
+        if (Input.GetKeyDown(KeyCode.Escape) && is_game_paused == false)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            is_game_paused = true;
+            Debug.Log("game paused"); // all i need for now
+        }
     }
 }

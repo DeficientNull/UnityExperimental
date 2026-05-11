@@ -607,11 +607,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5422065219360646610, guid: eb41a3d22d44bdf4db9005c481f44f1e, type: 3}
       propertyPath: player_speed
-      value: 15
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5422065219360646610, guid: eb41a3d22d44bdf4db9005c481f44f1e, type: 3}
+      propertyPath: player_drag_amt
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5422065219360646610, guid: eb41a3d22d44bdf4db9005c481f44f1e, type: 3}
       propertyPath: player_jump_amt
-      value: 10
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6629592050871058985, guid: eb41a3d22d44bdf4db9005c481f44f1e, type: 3}
       propertyPath: m_Name
