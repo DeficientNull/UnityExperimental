@@ -17,6 +17,7 @@ public class player_main : MonoBehaviour
     private float cam_rotation_y;
     public float player_speed = 2.5f;
     public int player_health = 100;
+    public float player_jump_amt;
 
     // player hud setup
     //bool is_game_paused = false;
@@ -35,6 +36,7 @@ public class player_main : MonoBehaviour
         player_camera.transform.position = player_body_position.transform.position + player_height;
 
         PlayerMove();
+        PlayerJump();
     }
 
     // Update is called once per frame
@@ -92,5 +94,13 @@ public class player_main : MonoBehaviour
 
         // FIXME - weird issue where moving around the mouse feels very stuttery
         player_camera.transform.rotation = Quaternion.Euler(cam_rotation_x, cam_rotation_y, 0);
+    }
+    
+    void PlayerJump()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            player_rb.AddForce(Vector3.up * player_jump_amt, ForceMode.Impulse); 
+        }        
     }
 }

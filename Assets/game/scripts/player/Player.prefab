@@ -194,6 +194,7 @@ MonoBehaviour:
   cam_sensitivity: 400
   player_speed: 20
   player_health: 100
+  player_jump_amt: 10
 --- !u!1 &7704392931864410826
 GameObject:
   m_ObjectHideFlags: 0
