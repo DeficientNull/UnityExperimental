@@ -38,7 +38,7 @@ public class player_main : MonoBehaviour
         player_camera.transform.position = player_body_position.transform.position + player_height;
 
         PlayerMove();
-        PlayerJump();
+        //PlayerJump();
     }
 
     // Update is called once per frame
@@ -62,19 +62,19 @@ public class player_main : MonoBehaviour
         cam_orientation.Normalize();
         cam_side_orientation.Normalize();
 
-        if (Input.GetKey("w"))
+        if (Input.GetKey(KeyCode.W))
         {
             player_rb.AddForce(cam_orientation * player_speed);
         }
-        if (Input.GetKey("s"))
+        if (Input.GetKey(KeyCode.S))
         {
             player_rb.AddForce(-cam_orientation * player_speed);
         }
-        if (Input.GetKey("a"))
+        if (Input.GetKey(KeyCode.A))
         {
             player_rb.AddForce(-cam_side_orientation * player_speed);
         }
-        if (Input.GetKey("d"))
+        if (Input.GetKey(KeyCode.D))
         {
             player_rb.AddForce(cam_side_orientation * player_speed);
         }
@@ -95,6 +95,7 @@ public class player_main : MonoBehaviour
         player_camera.transform.rotation = Quaternion.Euler(cam_rotation_x, cam_rotation_y, 0);
     }
 
+    // implementation works more or less, but i'm leaving it disabled until i can iron out it's kinks
     void PlayerJump()
     {
         player_jump_amt = Mathf.Clamp(player_jump_amt, 1, 2);
@@ -103,6 +104,14 @@ public class player_main : MonoBehaviour
             player_rb.AddForce(Vector3.up * player_jump_amt, ForceMode.Impulse); 
             Debug.Log("Jumping");
         }        
+    }
+
+    void PlayerInteract ()
+    {
+        if (Input.GetKey(KeyCode.E))
+        {
+            Debug.Log("Interacted"); //temp implementation
+        }
     }
 
     void PauseGame()
